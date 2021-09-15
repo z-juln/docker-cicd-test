@@ -1,0 +1,7 @@
+FROM node:10-alpine
+ADD . /workspace/juln/temp/app/
+WORKDIR /workspace/juln/temp/app
+RUN npm config set registry https://registry.npm.taobao.org && \
+  npm install
+EXPOSE 7001
+CMD ["npm", "start"]
