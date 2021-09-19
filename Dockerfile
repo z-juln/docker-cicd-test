@@ -4,4 +4,4 @@ WORKDIR /workspace/juln/temp/app
 RUN npm config set registry https://registry.npm.taobao.org && \
   npm install
 EXPOSE 7001
-CMD ["npm", "start"]
+CMD ["pm2", "start", "./index.js", "-n", "docker-cicd-test"]
